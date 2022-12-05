@@ -30,11 +30,13 @@ function generateFractal() {
   const canvasElement = document.getElementById("fractal-canvas") as HTMLCanvasElement;
 
   canvasElement.addEventListener("click", (evt) => {
-    drawPeanoCurve(ctx, 0, 0, width, 4);
+    ctx.clearRect(0, 0, width, height)
+    drawPeanoCurve(ctx, 0, 0, Math.max(width, height), 4);
   });
 
   canvasElement.addEventListener("mousemove", (evt) => {
-    drawPeanoCurve(ctx, 0, 0, width, 4);
+    ctx.clearRect(0, 0, width, height)
+    drawPeanoCurve(ctx, 0, 0, Math.max(width, height), 4);
   });
 
   const width = window.innerWidth
@@ -58,7 +60,7 @@ function generateFractal() {
   // drawBarnsleyFern(ctx, 0, 0, 1000)
   // drawHeighwayDragon(ctx, 100, 100, 200, 10)
   // drawVicsekFractal(ctx, 100, 100, 300, 6)
-  drawPeanoCurve(ctx, 0, 0, width, 4);
+  drawPeanoCurve(ctx, 0, 0, Math.max(width, height), 4);
 }
 
 // Just rectangles and triangles
