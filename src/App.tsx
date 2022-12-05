@@ -11,6 +11,20 @@ const randomInt = (max: number = 1) => {
   return Math.round(Math.random() * max)
 }
 
+const randomColor = () => {
+  const colors = [
+    'red',
+    'tangerine',
+    'yellow',
+    'green',
+    'electric blue',
+    'barney',
+    'violet'
+  ]
+  const index = Math.round(Math.random() * (colors.length - 1))
+  return colors[index]
+}
+
 function generateFractal() {
   // Get the canvas element by its ID
   const canvasElement = document.getElementById("fractal-canvas") as HTMLCanvasElement;
@@ -339,6 +353,7 @@ function drawPeanoCurve(ctx: CanvasRenderingContext2D, x: number, y: number, siz
   ctx.beginPath();
   ctx.lineTo(x1, y1);
   ctx.lineTo(x2, y2);
+  // ctx.strokeStyle = randomColor()
   ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
   ctx.stroke();
 }
