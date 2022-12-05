@@ -15,9 +15,16 @@ function generateFractal() {
   // Get the canvas element by its ID
   const canvasElement = document.getElementById("fractal-canvas") as HTMLCanvasElement;
 
+  canvasElement.addEventListener("mousemove", (evt) => {
+    drawPeanoCurve(ctx, 0, 0, width, 4);
+  });
+
+  const width = window.innerWidth
+  const height = window.innerHeight
+
   // Set the size of the canvas
-  canvasElement.width = 400;
-  canvasElement.height = 300;
+  canvasElement.width = width
+  canvasElement.height = height
 
   // Get the canvas drawing context
   const ctx = canvasElement.getContext("2d") as CanvasRenderingContext2D
@@ -28,11 +35,11 @@ function generateFractal() {
   // drawCantorSet(ctx, 100, 100, 200, 3);
   // drawKochCurve(ctx, 100, 100, 300, 100, 4);
 
-  // drawPeanoCurve(ctx, 100, 100, 200, 3);
+  // drawPeanoCurve(ctx, 0, 0, width, 4);
   // generateBarnsleyFern(ctx)
   // drawBarnsleyFern(ctx, 0, 0, 1000)
   // drawHeighwayDragon(ctx, 100, 100, 200, 10)
-  drawVicsekFractal(ctx, 100, 100, 300, 6)
+  // drawVicsekFractal(ctx, 100, 100, 300, 6)
 }
 
 // Just rectangles and triangles
