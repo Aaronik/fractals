@@ -52,7 +52,7 @@ function generateFractal() {
   // Get the canvas drawing context
   const ctx = canvasElement.getContext("2d") as CanvasRenderingContext2D
 
-  drawMandelbrot(ctx, randomInt(100), randomInt(100), 100)
+  drawMandelbrot(canvasElement)
   // drawApollionianGasket(ctx, randomInt(100), randomInt(300), randomInt(400));
   // drawSierpinskiTriangle(ctx, Math.random() * 400, Math.random() * 300, Math.random() * 400, Math.random() * 300, Math.random() * 400, Math.random() * 400);
   // drawCantorSet(ctx, 100, 100, 200, 3);
